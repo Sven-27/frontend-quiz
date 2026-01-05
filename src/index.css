@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+/* custom theme settings */
+@theme {
+	/* custom font */
+	--font-rubik: 'Rubik', sans-serif;
+
+	/* custom color variables */
+  --color-white: rgb(255,255,255);
+	--color-black: rgb(0,0,0);
+	--color-grey-500: rgb(98, 108,127);
+	--color-grey-50: rgb(244, 246, 250);
+	--color-blue-950: rgb(45, 57, 73);
+	--color-blue-900: rgb(49, 62, 81);
+	--color-blue-850: rgb(59, 77, 102);
+	--color-blue-500: rgb(48, 106, 255);
+	--color-blue-300: rgb(171, 193, 225);
+	--color-blue-100: rgb(237, 241, 249);
+	--color-blue-50: rgb(235, 240, 255);
+	--color-green-500: rgb(47, 216, 135);
+	--color-green-100: rgb(224, 253, 239);
+	--color-purple-600: rgb(167, 41, 245);
+	--color-purple-100: rgb(246, 231, 255);
+	--color-orange-400: rgb(255, 126,53);
+	--color-orange-50: rgb(255, 245, 237);
+	--color-red-500: rgb(238, 84, 84);
+}
+
+  *, *::before, *::after {
+	@apply box-border m-0 p-0;
+  }
+
