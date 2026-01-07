@@ -30,3 +30,40 @@
 	@apply box-border m-0 p-0;
   }
 
+  .container{
+		&:before{
+			content: "";
+			@apply 
+				bg-[url('/src/assets/images/pattern-background-mobile-light.svg')] 
+				bg-no-repeat
+				absolute
+				top-0
+				left-0
+				w-full
+				h-full
+				bg-contain
+				z-[-1];
+		} 
+		@media only screen and (width >= 768px){
+			&:before{
+			content: "";
+			@apply 
+				bg-[url('/src/assets/images/pattern-background-tablet-light.svg')] 
+				w-[75%]
+				translate-x-[-15%];
+		} 
+		}
+		@media only screen and (width >= 1024px){
+			max-width: 1440px;
+			&:before{
+			content: "";
+			@apply 
+				bg-[url('/src/assets/images/pattern-background-desktop-light.svg')] 
+				absolute
+				w-full
+				h-[960px]
+				translate-x-0;
+		} 
+		}
+  }
+
