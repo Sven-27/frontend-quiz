@@ -60,7 +60,7 @@
 			@apply 
 				bg-[url('/src/assets/images/pattern-background-desktop-light.svg')] 
 				absolute
-				w-full
+				w-[1440px]
 				h-[960px]
 				translate-x-0;
 		} 
