@@ -1,10 +1,12 @@
 import Header from "./components/header/Header";
+import Home from "./components/main/Home";
 
 function App() {
 
   return (
-     <div className="container w-screen h-screen 2xl:max-h-[960px] overflow-hidden mx-auto p-4 bg-grey-50 flex  justify-center relative z-[-1]">
+     <div className="container w-screen h-screen 2xl:max-h-[960px] overflow-hidden bg-grey-50 dark:bg-blue-900 flex flex-col items-center justify-center relative px-[24px] py-[16px]">
         <Header />
+        <Home />
     </div>
   )
 }
