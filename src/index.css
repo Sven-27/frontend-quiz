@@ -123,10 +123,10 @@
 	#toggle-switch {
 		&::after {
 			content: "";
-			@apply absolute h-[12px] w-[12px]  bg-white rounded-full top-1/2 left-1 transition-transform duration-200 ease-in-out -translate-y-1/2;
+			@apply absolute size-[clamp(10px,3vw,20px)] bg-white rounded-full top-1/2 left-1 transition-transform duration-200 ease-in-out -translate-y-1/2;
 		}
 		&:checked::after {
-			@apply translate-x-3;
+			@apply translate-x-2.5 sm:translate-x-5;
 		}
 	}
 
