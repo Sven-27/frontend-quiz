@@ -1,5 +1,7 @@
 import Header from "./components/header/Header";
 import Home from "./components/main/Home";
+import Quiz from "./components/main/Quiz";
+import Score from "./components/main/Score";
 
 function App() {
 
