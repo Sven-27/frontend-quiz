@@ -45,7 +45,7 @@
     ::-webkit-scrollbar {
         display: none;
     }
-}
+	}
 
   .container{
 		&:before{
