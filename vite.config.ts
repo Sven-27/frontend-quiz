@@ -7,8 +7,8 @@ export default defineConfig({
   server: {
     cors: false,
     proxy: {
-      '/questions': {
-        target: 'http://localhost:5173',
+      '/blob/main/questions.json': {
+        target: 'https://github.com/Sven-27/frontend-quiz-api/',
         changeOrigin: true,
         secure: false,
       },

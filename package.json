@@ -7,16 +7,21 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "set HTTPS=true&&react-scripts start",
+    "mockserver": "json-server --watch ../sample-db.json --port 3010 --delay 800",
+    "startdev": "concurrently --kill-others \"npm start\" \"npm run mockserver\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
     "@vitejs/plugin-react-swc": "^4.2.2",
     "axios": "^1.13.2",
+    "json-server": "^1.0.0-beta.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.12.0",
+    "uuid": "^13.0.0",
     "zustand": "^5.0.10"
   },
   "devDependencies": {

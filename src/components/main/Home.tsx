@@ -1,24 +1,15 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from 'react-router-dom';
-import type { ResponseAPI } from '../../api/questions';
+import { useQuestionsStore } from "../../zustand/questionsStore";
+import type { ResponseAPI } from "../../api/api";
 
 const Home = () => {
-  const [topics, setTopics] = useState<ResponseAPI[]>([]);
-  console.log(topics);
-
-    const fetchTopics = async () => {
-      try {
-        const response = await fetch('/data.json');
-        const data: ResponseAPI[] = await response.json();
-        setTopics(data);
-      } catch (error) {
-        console.error("Error fetching topics:", error);
-      }
-    }
-
-    useEffect(() => {
-      fetchTopics();
-    }, []);
+  const { questions, fetchQuestions }: any = useQuestionsStore();
+  
+  useEffect(() => {
+    fetchQuestions();
+  }, []);
+ 
   return (
     <main className="h-full z-10 w-full flex flex-col lg:flex-row">
       <section className="w-full ">
@@ -26,12 +17,18 @@ const Home = () => {
         <p className="text-[clamp(14px,2vw,20px)] italic text-grey-500">Pick a subject to get started.</p>
       </section>
 
-      <section className="w-full mt-8 sm:mt-0 sm:ml-8 flex flex-col gap-4">
+      <section className="w-full mt-8 sm:mt-0 sm:ml-8 flex flex-col gap-5">
         {
-          topics?.map((topic, index) => (
-            <Link key={index} to={`/quiz/${topic.title}`} className="w-full px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 text-center transition">{topic.title}</Link>
+          (questions as ResponseAPI[])?.map((topic: ResponseAPI, index: number) => (
+            <Link 
+              key={index} 
+              to={`/quiz/${topic.title}`} 
+              className="w-full px-4 py-4 bg-white text-blue-900 font-medium rounded-xl hover:bg-purple-700 shadow-xl transition"
+            >
+              <img src={topic.icon} alt={topic.title} className={`inline-block w-[40px] h-[40px] mr-3 mb-1 rounded-sm align-middle p-1 ${topic['icon-bg']}`} />  
+              {topic.title}
+            </Link>
           ))
-        
         }
         {/* <Link to="/quiz/CSS" className="w-full px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 text-center transition">CSS</Link>
         <Link to="/quiz/JavaScript" className="w-full px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 text-center transition">JavaScript</Link>
