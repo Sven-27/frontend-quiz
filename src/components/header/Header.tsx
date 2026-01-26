@@ -3,7 +3,7 @@ import { GoMoon } from "react-icons/go";
 
 const Header = () => {
   return (
-    <header className="z-10 flex justify-between items-center w-full py-4 sm:py-6">
+    <header className="z-10 flex justify-between items-center w-full py-4 sm:py-6 lg:mb-[3rem]">
 			{/* <div className="mb-6 text-center flex items-center">
 				<img src="../src/assets/images/icon-accessibility.svg" alt="accessibility icon" className="mx-auto mb-4" />
 				<p>Accessibility</p>

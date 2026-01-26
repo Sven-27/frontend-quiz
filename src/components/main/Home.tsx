@@ -17,7 +17,7 @@ const Home = () => {
         <p className="text-[clamp(14px,2vw,20px)] italic text-grey-500">Pick a subject to get started.</p>
       </section>
 
-      <section className="w-full mt-8 sm:mt-0 sm:ml-8 flex flex-col gap-5">
+      <section className="w-full mt-8 lg:mt-0   flex flex-col gap-5">
         {
           (questions as ResponseAPI[])?.map((topic: ResponseAPI, index: number) => (
             <Link 
@@ -25,8 +25,8 @@ const Home = () => {
               to={`/quiz/${topic.title}`} 
               className="w-full px-4 py-4 bg-white text-blue-900 font-medium rounded-xl hover:bg-purple-700 shadow-xl transition"
             >
-              <img src={topic.icon} alt={topic.title} className={`inline-block w-[40px] h-[40px] mr-3 mb-1 rounded-sm align-middle p-1 ${topic['icon-bg']}`} />  
-              {topic.title}
+              <img src={topic.icon} alt={topic.title} className={`inline-block w-[clamp(40px,6vw,56px)] h-[clamp(40px,6vw,56px)] mr-3 mb-1 rounded-sm align-middle p-1 ${topic['icon-bg']}`} />  
+              <span className="text-[clamp(18px,2vw,28px)]">{topic.title}</span>
             </Link>
           ))
         }
