@@ -23,16 +23,13 @@ const Home = () => {
             <Link 
               key={index} 
               to={`/quiz/${topic.title}`} 
-              className="w-full px-4 py-4 bg-white dark:bg-blue-850 text-blue-900 dark:text-white font-medium rounded-3xl hover:bg-purple-700 shadow-xl transition"
+              className="w-full px-4 py-4 bg-white dark:bg-blue-850 text-blue-900 dark:text-white font-medium rounded-xl lg:rounded-3xl hover:bg-purple-700 shadow-xl transition"
             >
-              <img src={topic.icon} alt={topic.title} className={`inline-block w-[clamp(40px,6vw,56px)] h-[clamp(40px,6vw,56px)] mr-3 mb-1 rounded-lg align-middle p-1 ${topic['icon-bg']}`} />  
+              <img src={topic.icon} alt={topic.title} className={`inline-block size-[clamp(40px,6vw,56px)] mr-3 mb-1 rounded-sm lg:rounded-lg align-middle p-1 ${topic['icon-bg']}`} />  
               <span className="text-[clamp(18px,2vw,28px)]">{topic.title}</span>
             </Link>
           ))
         }
-        {/* <Link to="/quiz/CSS" className="w-full px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 text-center transition">CSS</Link>
-        <Link to="/quiz/JavaScript" className="w-full px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 text-center transition">JavaScript</Link>
-        <Link to="/quiz/Accessibility" className="w-full px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 text-center transition">Accessibility</Link> */}
       </section>
     </main>
   )

@@ -1,6 +1,6 @@
 const Quiz = () => {
   return (
-    <div>Quiz</div>
+    <div className="h-full">Quiz</div>
   )
 }
 
