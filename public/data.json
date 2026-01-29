@@ -2,7 +2,7 @@
     "quizzes": [
         {
             "title": "HTML",
-            "icon": "src/assets/images/icon-html.svg",
+            "icon": "../../src/assets/images/icon-html.svg",
             "icon-bg": "bg-orange-50",
             "questions": [
                 {
@@ -109,7 +109,7 @@
         },
         {
             "title": "CSS",
-            "icon": "src/assets/images/icon-css.svg",
+            "icon": "../../src/assets/images/icon-css.svg",
             "icon-bg": "bg-green-100",
             "questions": [
                 {
@@ -216,7 +216,7 @@
         },
         {
             "title": "JavaScript",
-            "icon": "src/assets/images/icon-js.svg",
+            "icon": "../../src/assets/images/icon-js.svg",
             "icon-bg": "bg-blue-50",
             "questions": [
                 {
@@ -323,7 +323,7 @@
         },
         {
             "title": "Accessibility",
-            "icon": "src/assets/images/icon-accessibility.svg",
+            "icon": "../../src/assets/images/icon-accessibility.svg",
             "icon-bg": "bg-purple-100",
             "questions": [
                 {
