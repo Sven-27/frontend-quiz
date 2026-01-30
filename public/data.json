@@ -7,6 +7,12 @@
             "questions": [
                 {
                     "question": "What does HTML stand for?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "Hyper Trainer Marking Language",
                         "Hyper Text Marketing Language",
@@ -17,6 +23,12 @@
                 },
                 {
                     "question": "Which of the following is the correct structure for an HTML document?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "<html><head></head><body></body></html>",
                         "<head><html></html><body></body></head>",
@@ -27,6 +39,12 @@
                 },
                 {
                     "question": "Which HTML element is used to define the title of a document?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "<head>",
                         "<title>",
@@ -37,6 +55,12 @@
                 },
                 {
                     "question": "What is the purpose of the <body> tag in HTML?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "It defines the document's head section.",
                         "It contains all the content such as text, images, and links.",
@@ -47,6 +71,12 @@
                 },
                 {
                     "question": "Which HTML tag is used to create a hyperlink?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "<hyperlink>",
                         "<link>",
@@ -57,6 +87,12 @@
                 },
                 {
                     "question": "Which tag is used to display images in HTML?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "<img>",
                         "<image>",
@@ -67,6 +103,12 @@
                 },
                 {
                     "question": "What attribute is used to provide the path of an image in the <img> tag?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "link",
                         "src",
@@ -77,6 +119,12 @@
                 },
                 {
                     "question": "Which HTML tag is used to create an unordered list?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "<ul>",
                         "<ol>",
@@ -87,6 +135,12 @@
                 },
                 {
                     "question": "What does the <br> tag do?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "It breaks the text into two sections.",
                         "It creates a bold text.",
@@ -97,6 +151,12 @@
                 },
                 {
                     "question": "In HTML, what does the `fieldset` tag do?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "It is used to group related data in a form.",
                         "It sets the field to a fixed size.",
@@ -114,6 +174,12 @@
             "questions": [
                 {
                     "question": "What does CSS stand for?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "Colorful Style Sheets",
                         "Computer Style Sheets",
@@ -124,6 +190,12 @@
                 },
                 {
                     "question": "Which HTML attribute is used to define inline styles?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "styles",
                         "style",
@@ -134,6 +206,12 @@
                 },
                 {
                     "question": "How do you insert a comment in a CSS file?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "// this is a comment //",
                         "/* this is a comment */",
@@ -144,6 +222,12 @@
                 },
                 {
                     "question": "Which property is used to change the background color of an element?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "color",
                         "bgcolor",
@@ -154,6 +238,12 @@
                 },
                 {
                     "question": "How do you apply a style to all <p> elements?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "p { }",
                         ".p { }",
@@ -164,7 +254,13 @@
                 },
                 {
                     "question": "Which property is used to change the font of an element?",
-                    "options": [
+                    
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],"options": [
                         "font-style",
                         "text-style",
                         "font-family",
@@ -174,6 +270,12 @@
                 },
                 {
                     "question": "How do you make each word in a text start with a capital letter?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "text-transform: capitalize",
                         "text-transform: uppercase",
@@ -184,7 +286,13 @@
                 },
                 {
                     "question": "How do you select an element with the class name 'header'?",
-                    "options": [
+                    
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],"options": [
                         ".header",
                         "#header",
                         "header",
@@ -194,6 +302,12 @@
                 },
                 {
                     "question": "What is the default value of the 'position' property?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "relative",
                         "fixed",
@@ -204,6 +318,12 @@
                 },
                 {
                     "question": "What is the purpose of the z-index property in CSS?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "To count the number of elements",
                         "To set the magnification level of an element",
@@ -221,6 +341,12 @@
             "questions": [
                 {
                     "question": "Which syntax is correct to output 'Hello World' in an alert box?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "alertBox('Hello World');",
                         "msg('Hello World');",
@@ -231,6 +357,12 @@
                 },
                 {
                     "question": "How do you call a function named 'myFunction'?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "call function myFunction()",
                         "call myFunction()",
@@ -241,6 +373,12 @@
                 },
                 {
                     "question": "How to write an IF statement in JavaScript?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "if i = 5 then",
                         "if (i == 5)",
@@ -251,6 +389,12 @@
                 },
                 {
                     "question": "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "if (i <> 5)",
                         "if i =! 5 then",
@@ -261,6 +405,12 @@
                 },
                   {
                     "question": "How does a FOR loop start?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "for (i = 0; i <= 5)",
                         "for i = 1 to 5",
@@ -271,6 +421,12 @@
                 },
                 {
                     "question": "How can you add a single-line comment in JavaScript?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                       "'This is a single-line comment",
                       "//This is a single-line comment",
@@ -281,6 +437,12 @@
                 },
                 {
                     "question": "What is the correct way to write a JavaScript array?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "var colors = (1:'red', 2:'green', 3:'blue')",
                         "var colors = ['red', 'green', 'blue']",
@@ -291,6 +453,12 @@
                 },
                 {
                     "question": "How do you find the number with the highest value of x and y?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "Math.ceil(x, y)",
                         "top(x, y)",
@@ -301,6 +469,12 @@
                 },
                 {
                     "question": "Which operator is used to assign a value to a variable?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "-",
                         "*",
@@ -311,6 +485,12 @@
                 },
                 {
                     "question": "What is the correct way to write a JavaScript object?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "var person = {firstName: 'John', lastName: 'Doe'};",
                         "var person = {firstName = 'John', lastName = 'Doe'};",
@@ -328,6 +508,12 @@
             "questions": [
                 {
                     "question": "What does 'WCAG' stand for?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "Web Content Accessibility Guidelines",
                         "Web Compliance Accessibility Guide",
@@ -338,6 +524,12 @@
                 },
                 {
                     "question": "Which element is used to provide alternative text for images for screen reader users?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "<alt>",
                         "<figcaption>",
@@ -348,6 +540,12 @@
                 },
                 {
                     "question": "What does ARIA stand for in web development?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "Accessible Rich Internet Applications",
                         "Advanced Responsive Internet Assistance",
@@ -358,6 +556,12 @@
                 },
                 {
                     "question": "Which of the following is not a principle of the WCAG?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "Perceivable",
                         "Dependable",
@@ -368,6 +572,12 @@
                 },
                 {
                     "question": "Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "3:1",
                         "4.5:1",
@@ -378,6 +588,12 @@
                 },
                 {
                     "question": "Which of the following elements is inherently focusable, meaning it can receive focus without a 'tabindex' attribute?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "<div>",
                         "<span>",
@@ -388,6 +604,12 @@
                 },
                 {
                     "question": "What is the purpose of the 'lang' attribute in an HTML page?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "To specify the scripting language",
                         "To define the character set",
@@ -408,6 +630,12 @@
                 },
                 {
                     "question": "What is the role of 'skip navigation' links in web accessibility?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "To skip over primary navigation to the main content",
                         "To provide shortcuts to different sections of the website",
@@ -418,6 +646,12 @@
                 },
                 {
                     "question": "Which of these tools can help in checking the accessibility of a website?",
+                    "options-prefix": [
+                        "A",
+                        "B",
+                        "C",
+                        "D"
+                    ],
                     "options": [
                         "W3C Validator",
                         "Google Lighthouse",

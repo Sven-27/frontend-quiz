@@ -16,7 +16,7 @@ const Header = () => {
 	}, []);
 
   return (
-	<header className="z-10 flex justify-between items-center w-full py-4 sm:py-6 lg:mb-[3rem]">
+	<header className="z-10 flex justify-between items-center w-full py-4 sm:py-6 mb-[clamp(2rem,4vw,3rem)]">
 			{ 
 				location.pathname !== "/" && 
 					<>
