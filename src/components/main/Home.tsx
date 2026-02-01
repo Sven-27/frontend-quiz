@@ -17,13 +17,13 @@ const Home = () => {
         <p className="text-[clamp(14px,2vw,20px)] italic text-grey-500">Pick a subject to get started.</p>
       </section>
 
-      <section className="w-full mt-8 lg:mt-0   flex flex-col gap-5">
+      <section className="w-full mt-8 lg:mt-0 flex flex-col gap-5">
         {
           (questions as ResponseAPI[])?.map((topic: ResponseAPI, index: number) => (
             <Link 
               key={index} 
               to={`/quiz/${topic.title}`} 
-              className="w-full px-4 py-4 bg-white dark:bg-blue-850 text-blue-900 dark:text-white font-medium rounded-xl lg:rounded-3xl hover:scale-102 shadow-xl transition"
+              className="w-full px-4 py-4 bg-white dark:bg-blue-850 text-blue-900 dark:text-white font-medium rounded-xl lg:rounded-3xl focus:ring-2 focus:ring-purple-600 hover:ring-2 hover:ring-purple-600  shadow-xl transition"
             >
               <img src={topic.icon} alt={topic.title} className={`inline-block size-[clamp(40px,6vw,56px)] mr-3 mb-1 rounded-sm lg:rounded-lg align-middle p-1 ${topic['icon-bg']}`} />  
               <span className="text-[clamp(18px,2vw,28px)]">{topic.title}</span>

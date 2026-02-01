@@ -1,4 +1,5 @@
 @import "tailwindcss";
+/* @plugin "tw-elements"; */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* custom theme settings */
@@ -21,6 +22,7 @@
 	--color-green-500: rgb(47, 216, 135);
 	--color-green-100: rgb(224, 253, 239);
 	--color-purple-600: rgb(167, 41, 245);
+	--color-purple-400: rgb(237, 107, 255);
 	--color-purple-100: rgb(246, 231, 255);
 	--color-orange-400: rgb(255, 126,53);
 	--color-orange-50: rgb(255, 245, 237);
