@@ -7,7 +7,8 @@
             "questions": [
                 {
                     "question": "What does HTML stand for?",
-                    "options": {
+                    "options": 
+                        {
                           "A": "Hyper Trainer Marking Language",
                         	"B": "Hyper Text Marketing Language",
                         	"C": "Hyper Text Markup Language",

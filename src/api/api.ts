@@ -15,7 +15,7 @@ export default api;
 
 export interface Question {
     question: String;
-    options: String[];
+    options: {};
     answer: String;
 }
 
