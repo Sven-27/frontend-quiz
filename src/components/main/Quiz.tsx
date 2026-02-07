@@ -40,9 +40,15 @@ const Quiz = () => {
               <button 
                 key={index} 
                 onClick={() => setSelected(index)}
-                className={`option-btn w-full flex items-center px-4 py-4 bg-white dark:bg-blue-850 text-blue-900 text-[clamp(16px,2vw,24px)] dark:text-white font-medium rounded-xl lg:rounded-3xl  hover:ring-2 hover:ring-purple-600 shadow-xl transition text-left ${selected === index ? "ring-2 ring-purple-600" : ""}`}
+                className={`option-btn w-full flex items-center px-4 py-4 bg-white dark:bg-blue-850 text-blue-900 text-[clamp(16px,2vw,24px)] 
+                            dark:text-white font-medium rounded-xl lg:rounded-3xl  hover:ring-2 hover:ring-purple-600 shadow-xl transition text-left 
+                            ${selected === index ? "ring-2 ring-purple-600" : ""}`}
               >
-                <p className={`size-[clamp(40px,4vw,56px)] grid place-items-center bg-grey-50 rounded-md mr-5 dark:text-blue-900 ${selected === index ? "bg-purple-600 text-white dark:text-white" : ""}`}>{`${key}`}</p>
+                <p className={`size-[clamp(40px,4vw,56px)] grid place-items-center bg-grey-50 rounded-md mr-5 dark:text-blue-900
+                               ${selected === index ? "bg-purple-600 text-white dark:text-white" : ""}`}
+                >
+                  {`${key}`}
+                </p>
                 <span className="w-full">{`${option}`}</span>
               </button>
             ))
@@ -55,6 +61,10 @@ const Quiz = () => {
         >
           <span className="text-[clamp(16px,2vw,24px)]">Submit Answer</span>
         </button>
+        <span className="text-red-500 flex items-center justify-center mt-2 text-[clamp(14px,2vw,20px)] hidden">
+          <img src="../../src/assets/images/icon-error.svg" alt="Error Icon" className="size-[clamp(14px,4vw,20px)] mr-2" />
+          <p>Please select an answer</p>
+        </span>
       </section>
     </div>
   )

@@ -1,7 +1,8 @@
 import { create } from "zustand";
 import { combine, devtools, persist } from "zustand/middleware";
 
-// TODO(@artokun): Replace this with the event emmitter patter we use in the editor
+// State for tne theme (dark or light mode).
+
 export const themeStore = create(
   devtools(
     persist(
