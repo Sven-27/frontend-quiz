@@ -14,6 +14,7 @@ const Quiz = () => {
   const [isAnswer, setIsAnswer] = useState<string>("");
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const [isSelected, setIsSelected] = useState<boolean>(false);
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
 	useEffect(() => {
 		fetchQuestions();
@@ -40,26 +41,43 @@ const Quiz = () => {
         {
           questions.filter((topic: ResponseAPI) => `/quiz/${topic.title}` === location.pathname).map((topic: ResponseAPI) => 
             Object.entries(topic.questions[count - 1].options).map(([key, option], index) => (
-              // console.log("Current selected state:", options, isAnswer, isCorrect), // Log the current state values
+              console.log("Current selected state:", selected), // Log the current state values
               <button 
                 key={index} 
-                onClick={() => { setSelected(index); setOptions(String(option)); setIsAnswer(String(topic.questions[count - 1].answer)); }}
+                onClick={() => { 
+                  setSelected(index); 
+                  setOptions(String(option)); 
+                  setIsAnswer(String(topic.questions[count - 1].answer)); 
+                  setIsSelected(false);
+                }}
+                disabled={isDisabled}
                 className={`option-btn w-full flex items-center px-4 py-4 bg-white dark:bg-blue-850 text-blue-900 text-[clamp(16px,2vw,24px)] 
                             dark:text-white font-medium rounded-xl lg:rounded-3xl hover:ring-2 hover:ring-purple-600 shadow-xl transition text-left 
-                            ${selected === index ? "ring-2 ring-purple-600" : ""} ${isCorrect && selected === index ? "ring-2 !ring-green-500" : selected === index && options !== isAnswer ? "ring-2 ring-red-500" : ""} 
+                            ${selected === index ? "ring-2 ring-purple-600" : ""} 
+                            ${isCorrect && selected === index && isSelected ? "ring-2 !ring-green-500" : 
+                              selected === index && options !== isAnswer && isSelected && "ring-2 ring-red-500"} 
                             `}
               >
                 <p className={`size-[clamp(40px,4vw,56px)] grid place-items-center bg-grey-50 rounded-md mr-5 dark:text-blue-900
                                ${selected === index ? "bg-purple-600 text-white dark:text-white" : ""} 
-                               ${isCorrect && selected === index ? "!bg-green-500" : ""}`}
+                               ${isCorrect && selected === index && isSelected ? "!bg-green-500" : 
+                                selected === index && options !== isAnswer && isSelected && "!bg-red-500"}`}
                 >
-                  {`${key}`}
+                  {String(key)}
                 </p>
-                <span className="w-full">{`${option}`}</span>
+                <span className="w-full">{String(option)}</span>
                 <img 
                   src="../../src/assets/images/icon-correct.svg" 
                   alt="Check Icon" 
-                  className={`size-[clamp(32px,6vw,40px)] ${isCorrect && selected === index ? "block" : "hidden"}`} 
+                  className={`size-[clamp(32px,6vw,40px)] 
+                              ${isSelected && String(option) === isAnswer ? "block" : "hidden"}
+                  
+                            `} 
+                />
+                 <img 
+                  src="../../src/assets/images/icon-incorrect.svg" 
+                  alt="Check Icon" 
+                  className={`size-[clamp(32px,6vw,40px)] ${options !== isAnswer && selected === index && isSelected ? "block" : "hidden"}`} 
                 />
               </button>
             ))
@@ -69,7 +87,11 @@ const Quiz = () => {
         <button 
           type="button" 
           className="mt-3 w-full py-4 bg-purple-600 hover:bg-purple-400 text-white font-regular rounded-xl lg:rounded-3xl shadow-xl transition"
-          onClick={() => {  options === isAnswer && options !== "" ? setIsCorrect(true) : setIsCorrect(false); setIsSelected(true) }}
+          onClick={() => {  
+            options === isAnswer && options !== "" ? setIsCorrect(true) : setIsCorrect(false); 
+            setIsSelected(true);
+            setIsDisabled(true); 
+          }}
         >
           <span className="text-[clamp(16px,2vw,24px)]">Submit Answer</span>
         </button>
