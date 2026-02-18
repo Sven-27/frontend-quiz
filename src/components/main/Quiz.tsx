@@ -4,6 +4,7 @@ import { useQuestionsStore } from "../../zustand/questionsStore";
 import { useCountStore } from "../../zustand/countStore";
 import type { ResponseAPI } from "../../api/api";
 import { useLocation } from "react-router-dom";
+import SubmitButton from "./buttons/SubmitButton";
 
 const Quiz = () => {
   const location = useLocation();
@@ -41,7 +42,6 @@ const Quiz = () => {
         {
           questions.filter((topic: ResponseAPI) => `/quiz/${topic.title}` === location.pathname).map((topic: ResponseAPI) => 
             Object.entries(topic.questions[count - 1].options).map(([key, option], index) => (
-              console.log("Current selected state:", selected), // Log the current state values
               <button 
                 key={index} 
                 onClick={() => { 
@@ -52,7 +52,7 @@ const Quiz = () => {
                 }}
                 disabled={isDisabled}
                 className={`option-btn w-full flex items-center px-4 py-4 bg-white dark:bg-blue-850 text-blue-900 text-[clamp(16px,2vw,24px)] 
-                            dark:text-white font-medium rounded-xl lg:rounded-3xl hover:ring-2 hover:ring-purple-600 shadow-xl transition text-left 
+                            dark:text-white font-medium rounded-xl lg:rounded-3xl ${!isDisabled && "hover:ring-2 hover:ring-purple-600"} shadow-xl transition text-left 
                             ${selected === index ? "ring-2 ring-purple-600" : ""} 
                             ${isCorrect && selected === index && isSelected ? "ring-2 !ring-green-500" : 
                               selected === index && options !== isAnswer && isSelected && "ring-2 ring-red-500"} 
@@ -70,8 +70,7 @@ const Quiz = () => {
                   src="../../src/assets/images/icon-correct.svg" 
                   alt="Check Icon" 
                   className={`size-[clamp(32px,6vw,40px)] 
-                              ${isSelected && String(option) === isAnswer ? "block" : "hidden"}
-                  
+                              ${isSelected && String(option) === isAnswer ? "block" : "hidden"}               
                             `} 
                 />
                  <img 
@@ -83,23 +82,28 @@ const Quiz = () => {
             ))
           )
         }
-        {console.log("correct", isCorrect)}
-        <button 
+        <SubmitButton 
+          options={options}
+          isAnswer={isAnswer}
+          setIsCorrect={setIsCorrect}
+          setIsSelected={setIsSelected}
+          setIsDisabled={setIsDisabled}
+        />
+        {/* <button 
           type="button" 
           className="mt-3 w-full py-4 bg-purple-600 hover:bg-purple-400 text-white font-regular rounded-xl lg:rounded-3xl shadow-xl transition"
           onClick={() => {  
             options === isAnswer && options !== "" ? setIsCorrect(true) : setIsCorrect(false); 
             setIsSelected(true);
-            setIsDisabled(true); 
+            options !== "" && setIsDisabled(true); 
           }}
         >
           <span className="text-[clamp(16px,2vw,24px)]">Submit Answer</span>
-        </button>
+        </button> */}
         <span className={`text-red-500 flex items-center justify-center mt-2 text-[clamp(14px,2vw,20px)] ${options === "" && isSelected ? "block" : "hidden"}`}>
           <img src="../../src/assets/images/icon-error.svg" alt="Error Icon" className="size-[clamp(14px,4vw,20px)] mr-2" />
           <p>Please select an answer</p>
         </span>
-          {console.log("options:", options)}
       </section>
     </div>
   )
