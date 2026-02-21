@@ -9,7 +9,7 @@ import SubmitButton from "./buttons/SubmitButton";
 const Quiz = () => {
   const location = useLocation();
   const { questions, fetchQuestions }: any = useQuestionsStore();
-  const { count, increment }: any = useCountStore();
+  const { count }: any = useCountStore();
   const [selected, setSelected] = useState<number | null>(null);
   const [options, setOptions] = useState<string>("");
   const [isAnswer, setIsAnswer] = useState<string>("");

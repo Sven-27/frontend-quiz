@@ -1,3 +1,5 @@
+import { useScoreStore } from "../../../zustand/countStore";
+
 type SubmitProps = {
   options: String;
   isAnswer: String;
@@ -7,6 +9,7 @@ type SubmitProps = {
 }
 
 const SubmitButton = ({options, isAnswer, setIsCorrect, setIsSelected, setIsDisabled}: SubmitProps) => {
+  const { incrementScore }: any = useScoreStore();
   return (
     <button 
           type="button" 
@@ -15,8 +18,9 @@ const SubmitButton = ({options, isAnswer, setIsCorrect, setIsSelected, setIsDisa
             options === isAnswer && options !== "" ? setIsCorrect(true) : setIsCorrect(false); 
             setIsSelected(true);
             options !== "" && setIsDisabled(true); 
+            options === isAnswer && options !== "" && incrementScore();
           }}
-        >
+          >
           <span className="text-[clamp(16px,2vw,24px)]">Submit Answer</span>
         </button>
   )
