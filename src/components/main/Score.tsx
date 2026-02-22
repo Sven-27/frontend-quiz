@@ -1,8 +1,13 @@
+import { useScoreStore } from "../../zustand/countStore";
 
+type ScoreProps = {
+  score: number;
+}
 
 const Score = () => {
+  const { score }: ScoreProps = useScoreStore();
   return (
-    <div>Score</div>
+    <div>{score}</div>
   )
 }
 

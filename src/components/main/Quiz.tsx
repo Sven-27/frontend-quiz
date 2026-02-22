@@ -5,6 +5,7 @@ import { useCountStore } from "../../zustand/countStore";
 import type { ResponseAPI } from "../../api/api";
 import { useLocation } from "react-router-dom";
 import SubmitButton from "./buttons/SubmitButton";
+import CountButton from "./buttons/CountButton";
 
 const Quiz = () => {
   const location = useLocation();
@@ -16,10 +17,15 @@ const Quiz = () => {
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
+  const [answerSelected, setAnswerSelected] = useState<boolean>(false);
+  const [errMsg, setErrMsg] = useState<boolean>(false);
 
 	useEffect(() => {
 		fetchQuestions();
 	}, []);
+
+  // console.log("count is:", count);
+  // console.log("options is:", options);
 
   return (
     <div className="h-full w-full flex flex-col lg:flex-row z-10 gap-9">
@@ -49,17 +55,18 @@ const Quiz = () => {
                   setOptions(String(option)); 
                   setIsAnswer(String(topic.questions[count - 1].answer)); 
                   setIsSelected(false);
+                  setAnswerSelected(true);
                 }}
                 disabled={isDisabled}
                 className={`option-btn w-full flex items-center px-4 py-4 bg-white dark:bg-blue-850 text-blue-900 text-[clamp(16px,2vw,24px)] 
                             dark:text-white font-medium rounded-xl lg:rounded-3xl ${!isDisabled && "hover:ring-2 hover:ring-purple-600"} shadow-xl transition text-left 
-                            ${selected === index ? "ring-2 ring-purple-600" : ""} 
+                            ${selected === index && answerSelected ? "ring-2 ring-purple-600" : ""} 
                             ${isCorrect && selected === index && isSelected ? "ring-2 !ring-green-500" : 
                               selected === index && options !== isAnswer && isSelected && "ring-2 ring-red-500"} 
                             `}
               >
                 <p className={`size-[clamp(40px,4vw,56px)] grid place-items-center bg-grey-50 rounded-md mr-5 dark:text-blue-900
-                               ${selected === index ? "bg-purple-600 text-white dark:text-white" : ""} 
+                               ${selected === index && answerSelected ? "bg-purple-600 text-white dark:text-white" : ""} 
                                ${isCorrect && selected === index && isSelected ? "!bg-green-500" : 
                                 selected === index && options !== isAnswer && isSelected && "!bg-red-500"}`}
                 >
@@ -82,25 +89,27 @@ const Quiz = () => {
             ))
           )
         }
-        <SubmitButton 
-          options={options}
-          isAnswer={isAnswer}
-          setIsCorrect={setIsCorrect}
-          setIsSelected={setIsSelected}
-          setIsDisabled={setIsDisabled}
-        />
-        {/* <button 
-          type="button" 
-          className="mt-3 w-full py-4 bg-purple-600 hover:bg-purple-400 text-white font-regular rounded-xl lg:rounded-3xl shadow-xl transition"
-          onClick={() => {  
-            options === isAnswer && options !== "" ? setIsCorrect(true) : setIsCorrect(false); 
-            setIsSelected(true);
-            options !== "" && setIsDisabled(true); 
-          }}
-        >
-          <span className="text-[clamp(16px,2vw,24px)]">Submit Answer</span>
-        </button> */}
-        <span className={`text-red-500 flex items-center justify-center mt-2 text-[clamp(14px,2vw,20px)] ${options === "" && isSelected ? "block" : "hidden"}`}>
+        {
+          !isDisabled ? (
+            <SubmitButton 
+              options={options}
+              isAnswer={isAnswer}
+              setIsCorrect={setIsCorrect}
+              setIsSelected={setIsSelected}
+              setIsDisabled={setIsDisabled}
+              setErrMsg={setErrMsg}
+            />
+          ) : (
+            <CountButton 
+              setIsDisabled={setIsDisabled}
+              setIsSelected={setIsSelected}
+              setAnswerSelected={setAnswerSelected}
+              setOptions={setOptions}
+              setErrMsg={setErrMsg}
+            />
+          )
+        }
+        <span className={`text-red-500 flex items-center justify-center mt-2 text-[clamp(14px,2vw,20px)] ${options === "" && errMsg ? "block" : "hidden"}`}>
           <img src="../../src/assets/images/icon-error.svg" alt="Error Icon" className="size-[clamp(14px,4vw,20px)] mr-2" />
           <p>Please select an answer</p>
         </span>
