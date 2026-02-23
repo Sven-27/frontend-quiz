@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ProgressBar from "../ProgressBar"
 import { useQuestionsStore } from "../../zustand/questionsStore";
 import { useCountStore } from "../../zustand/countStore";
+import { useDataStore } from "../../zustand/dataStore";
 import type { ResponseAPI } from "../../api/api";
 import { useLocation } from "react-router-dom";
 import SubmitButton from "./buttons/SubmitButton";
@@ -11,7 +12,8 @@ const Quiz = () => {
   const location = useLocation();
   const { questions, fetchQuestions }: any = useQuestionsStore();
   const { count }: any = useCountStore();
-  const [selected, setSelected] = useState<number | null>(null);
+  const { selected, selectedIndex } = useDataStore();
+  // const [selected, setSelected] = useState<number | null>(null);
   const [options, setOptions] = useState<string>("");
   const [isAnswer, setIsAnswer] = useState<string>("");
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
@@ -25,7 +27,7 @@ const Quiz = () => {
 	}, []);
 
   // console.log("count is:", count);
-  // console.log("options is:", options);
+  console.log("selected is:", selected);
 
   return (
     <div className="h-full w-full flex flex-col lg:flex-row z-10 gap-9">
@@ -51,7 +53,7 @@ const Quiz = () => {
               <button 
                 key={index} 
                 onClick={() => { 
-                  setSelected(index); 
+                  selectedIndex(index); 
                   setOptions(String(option)); 
                   setIsAnswer(String(topic.questions[count - 1].answer)); 
                   setIsSelected(false);
