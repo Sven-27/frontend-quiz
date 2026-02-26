@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { LuSun } from "react-icons/lu";
 import { GoMoon } from "react-icons/go";;
 import { themeStore } from "../../zustand/themeStore";
@@ -22,10 +22,10 @@ const Header = () => {
 					<>
 						{
 							questions.filter((topic: ResponseAPI) => `/quiz/${topic.title}` === location.pathname).map((topic: ResponseAPI, index: number) => 
-								<div key={index} className="flex items-center gap-4">
+								<Link to="/" key={index} className="flex items-center gap-4">
 									<img src={topic.icon} alt={`${topic.title} icon`} className={`bg-white size-[clamp(28px,6vw,40px)] p-1 lg:p-[5px] rounded-lg ${topic['icon-bg']}`} />
 									<p className="text-[clamp(18px,3vw,28px)] dark:text-white">{topic.title}</p>
-								</div>
+								</Link>
 							)
 						}
 					</> 

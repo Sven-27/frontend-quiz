@@ -1,4 +1,5 @@
 import { useScoreStore } from "../../../zustand/countStore";
+import { useDataStore } from "../../../zustand/dataStore";
 
 type SubmitProps = {
   options: String;
@@ -9,10 +10,13 @@ type SubmitProps = {
   setErrMsg: Function;  
 }
 
-const SubmitButton = ({options, isAnswer, setIsCorrect, setIsSelected, setIsDisabled, setErrMsg}: SubmitProps) => {
-  const { score, incrementScore }: any = useScoreStore();
+type ScoreProps = {
+  incrementScore: Function;
+}
 
-  // console.log("score is:", score);
+const SubmitButton = () => {
+  const { incrementScore }: ScoreProps = useScoreStore();
+  const { options, isAnswer, setIsCorrect, setIsDisabled, setIsSelected, setErrMsg }: SubmitProps = useDataStore();
 
   return (
     <button 

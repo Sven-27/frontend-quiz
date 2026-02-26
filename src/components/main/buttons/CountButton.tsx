@@ -1,5 +1,6 @@
 import { useCountStore } from "../../../zustand/countStore";
 import { Link } from "react-router-dom"
+import { useDataStore } from "../../../zustand/dataStore";
 
 type Props = {
   setIsDisabled: Function;
@@ -14,8 +15,9 @@ type CountProps = {
   incrementCount: Function;
 }
 
-const CountButton = ({setIsDisabled, setIsSelected, setAnswerSelected, setOptions, setErrMsg}: Props ) => {
+const CountButton = () => {
    const { count, incrementCount }: CountProps = useCountStore();
+   const { setOptions, setIsDisabled, setIsSelected, setAnswerSelected, setErrMsg }: Props = useDataStore();
    
   return (
     <>

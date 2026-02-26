@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import ProgressBar from "../ProgressBar"
 import { useQuestionsStore } from "../../zustand/questionsStore";
 import { useCountStore } from "../../zustand/countStore";
@@ -8,26 +8,44 @@ import { useLocation } from "react-router-dom";
 import SubmitButton from "./buttons/SubmitButton";
 import CountButton from "./buttons/CountButton";
 
+type DataProps = {
+  selected: null | number;
+  options: string;
+  isAnswer: string;
+  isCorrect: boolean;
+  isSelected: boolean;
+  isDisabled: boolean;
+  answerSelected: boolean;
+  errMsg: boolean;
+  selectedIndex: Function;
+  setOptions: Function;
+  setIsAnswer: Function;
+  setIsCorrect: Function;
+  setIsSelected: Function;
+  setIsDisabled: Function;
+  setAnswerSelected: Function;
+  setErrMsg: Function;
+}
+
+type CountProps = {
+  count: number;
+} 
+
 const Quiz = () => {
   const location = useLocation();
   const { questions, fetchQuestions }: any = useQuestionsStore();
-  const { count }: any = useCountStore();
-  const { selected, selectedIndex } = useDataStore();
-  // const [selected, setSelected] = useState<number | null>(null);
-  const [options, setOptions] = useState<string>("");
-  const [isAnswer, setIsAnswer] = useState<string>("");
-  const [isCorrect, setIsCorrect] = useState<boolean>(false);
-  const [isSelected, setIsSelected] = useState<boolean>(false);
-  const [isDisabled, setIsDisabled] = useState<boolean>(false);
-  const [answerSelected, setAnswerSelected] = useState<boolean>(false);
-  const [errMsg, setErrMsg] = useState<boolean>(false);
+  const { count }: CountProps = useCountStore();
+  const { selected, selectedIndex,
+          options, setOptions,
+          isAnswer, setIsAnswer,
+          isCorrect,isDisabled,
+          isSelected, setIsSelected,
+          answerSelected, setAnswerSelected,
+          errMsg }: DataProps = useDataStore();
 
 	useEffect(() => {
 		fetchQuestions();
 	}, []);
-
-  // console.log("count is:", count);
-  console.log("selected is:", selected);
 
   return (
     <div className="h-full w-full flex flex-col lg:flex-row z-10 gap-9">
@@ -93,22 +111,9 @@ const Quiz = () => {
         }
         {
           !isDisabled ? (
-            <SubmitButton 
-              options={options}
-              isAnswer={isAnswer}
-              setIsCorrect={setIsCorrect}
-              setIsSelected={setIsSelected}
-              setIsDisabled={setIsDisabled}
-              setErrMsg={setErrMsg}
-            />
+            <SubmitButton />
           ) : (
-            <CountButton 
-              setIsDisabled={setIsDisabled}
-              setIsSelected={setIsSelected}
-              setAnswerSelected={setAnswerSelected}
-              setOptions={setOptions}
-              setErrMsg={setErrMsg}
-            />
+            <CountButton />
           )
         }
         <span className={`text-red-500 flex items-center justify-center mt-2 text-[clamp(14px,2vw,20px)] ${options === "" && errMsg ? "block" : "hidden"}`}>
