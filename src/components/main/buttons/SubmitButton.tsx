@@ -1,22 +1,11 @@
 import { useScoreStore } from "../../../zustand/countStore";
 import { useDataStore } from "../../../zustand/dataStore";
-
-type SubmitProps = {
-  options: String;
-  isAnswer: String;
-  setIsCorrect: Function;
-  setIsSelected: Function;
-  setIsDisabled: Function;
-  setErrMsg: Function;  
-}
-
-type ScoreProps = {
-  incrementScore: Function;
-}
+import type { DataStore } from "../../../zustand/dataStore";
+import type { ScoreStore } from "../../../zustand/countStore";
 
 const SubmitButton = () => {
-  const { incrementScore }: ScoreProps = useScoreStore();
-  const { options, isAnswer, setIsCorrect, setIsDisabled, setIsSelected, setErrMsg }: SubmitProps = useDataStore();
+  const { incrementScore }: ScoreStore = useScoreStore();
+  const { options, isAnswer, setIsCorrect, setIsDisabled, setIsSelected, setErrMsg }: DataStore = useDataStore();
 
   return (
     <button 

@@ -2,9 +2,10 @@ import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { useQuestionsStore } from "../../zustand/questionsStore";
 import type { ResponseAPI } from "../../api/api";
+import type { ApiProps } from "../../zustand/questionsStore";
 
 const Home = () => {
-  const { questions, fetchQuestions }: any = useQuestionsStore();
+  const { questions, fetchQuestions }: ApiProps = useQuestionsStore();
   
   useEffect(() => {
     fetchQuestions();
@@ -19,7 +20,7 @@ const Home = () => {
 
       <section className="w-full mt-8 lg:mt-0 flex flex-col gap-5">
         {
-          (questions as ResponseAPI[])?.map((topic: ResponseAPI, index: number) => (
+          (questions)?.map((topic: ResponseAPI, index: number) => (
             <Link 
               key={index} 
               to={`/quiz/${topic.title}`} 

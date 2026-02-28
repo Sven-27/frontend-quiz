@@ -1,23 +1,12 @@
 import { useCountStore } from "../../../zustand/countStore";
 import { Link } from "react-router-dom"
 import { useDataStore } from "../../../zustand/dataStore";
-
-type Props = {
-  setIsDisabled: Function;
-  setIsSelected: Function;
-  setAnswerSelected: Function;
-  setOptions: Function;
-  setErrMsg: Function;
-}
-
-type CountProps = {
-  count: number;
-  incrementCount: Function;
-}
+import type { DataStore } from "../../../zustand/dataStore";
+import type { CountStore } from "../../../zustand/countStore";
 
 const CountButton = () => {
-   const { count, incrementCount }: CountProps = useCountStore();
-   const { setOptions, setIsDisabled, setIsSelected, setAnswerSelected, setErrMsg }: Props = useDataStore();
+   const { count, incrementCount }: CountStore = useCountStore();
+   const { setOptions, setIsDisabled, setIsSelected, setAnswerSelected, setErrMsg, selectedIndex }: DataStore = useDataStore();
    
   return (
     <>
@@ -40,6 +29,7 @@ const CountButton = () => {
               setAnswerSelected(false);
               setOptions("");
               setErrMsg(false);
+              selectedIndex(null);
             }}
           >
             <span className="text-[clamp(16px,2vw,24px)]">Next Question</span>

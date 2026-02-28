@@ -3,14 +3,22 @@ import { persist, devtools } from 'zustand/middleware';
 import api from '../api/api';
 import type { ResponseAPI } from '../api/api';
 
+export type ApiProps = {
+  questions: ResponseAPI[];
+  loading?: boolean;
+  error?: string | null;
+  fetchQuestions: Function;
+  clearQuestions?: Function;
+}
+
 // Define the Zustand store
-export const useQuestionsStore = create(
+export const useQuestionsStore = create<ApiProps>()(
   devtools(
     persist(
       (set) => ({
-        questions: [] as ResponseAPI[],
-        loading: false as boolean,
-        error: null as string | null,
+        questions: [],
+        loading: false,
+        error: null,
 
         // Fetch posts from API
         fetchQuestions: async () => {

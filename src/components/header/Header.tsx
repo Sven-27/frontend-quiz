@@ -4,12 +4,13 @@ import { LuSun } from "react-icons/lu";
 import { GoMoon } from "react-icons/go";;
 import { themeStore } from "../../zustand/themeStore";
 import { useQuestionsStore } from "../../zustand/questionsStore";
+import type { ApiProps } from "../../zustand/questionsStore";
 import type { ResponseAPI } from "../../api/api";
 
 const Header = () => {
 	const { dark, toggleMode } = themeStore();
 	const location = useLocation();
-	const { questions, fetchQuestions }: any = useQuestionsStore();
+	const { questions, fetchQuestions }: ApiProps = useQuestionsStore();
 
 	useEffect(() => {
 		fetchQuestions();

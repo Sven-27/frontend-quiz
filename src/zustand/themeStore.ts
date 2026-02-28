@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { combine, devtools, persist } from "zustand/middleware";
 
+
 // State for tne theme (dark or light mode).
 
 export const themeStore = create(
@@ -8,7 +9,7 @@ export const themeStore = create(
     persist(
       combine(
         {
-          dark: false as boolean
+          dark: false as boolean    
         },
         (set, get) => ({
             toggleMode: () => set({ dark: !get().dark })

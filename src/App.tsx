@@ -6,8 +6,12 @@ import Quiz from "./components/main/Quiz";
 import Score from "./components/main/Score";
 import  { themeStore } from './zustand/themeStore';
 
+type DarkProp = {
+  dark: boolean;
+}
+
 function App() {
-  const { dark } = themeStore();
+  const { dark }: DarkProp = themeStore();
 
   return (
     <BrowserRouter>
