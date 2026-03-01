@@ -16,13 +16,23 @@ const Header = () => {
 		fetchQuestions();
 	}, []);
 
+	function setPathName(theme: string){
+		if(location.pathname.split("/").slice(1, 2).toString() === "quiz"){
+			return `/${location.pathname.split("/").slice(1, 2).toString()}/${theme}`
+		}
+		if(location.pathname.split("/").slice(1, 2).toString() === "score"){
+			return `/${location.pathname.split("/").slice(1, 2).toString()}/${theme}`
+		}
+	}
+
+	console.log(location.pathname.split("/").slice(1, 2).toString())
   return (
 	<header className="z-10 flex justify-between items-center w-full py-4 sm:py-6 mb-[clamp(2rem,4vw,3rem)]">
 			{ 
 				location.pathname !== "/" && 
 					<>
 						{
-							questions.filter((topic: ResponseAPI) => `/quiz/${topic.title}` === location.pathname).map((topic: ResponseAPI, index: number) => 
+							questions.filter((topic: ResponseAPI) => setPathName(topic.title) === location.pathname).map((topic: ResponseAPI, index: number) =>
 								<Link to="/" key={index} className="flex items-center gap-4">
 									<img src={topic.icon} alt={`${topic.title} icon`} className={`bg-white size-[clamp(28px,6vw,40px)] p-1 lg:p-[5px] rounded-lg ${topic['icon-bg']}`} />
 									<p className="text-[clamp(18px,3vw,28px)] dark:text-white">{topic.title}</p>

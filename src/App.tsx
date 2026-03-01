@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/quiz/:title" element={<Quiz />} />
-            <Route path="/score" element={<Score />} />
+            <Route path="/score/" element={<Score />} />
           </Routes>
      </div>
         </BrowserRouter>

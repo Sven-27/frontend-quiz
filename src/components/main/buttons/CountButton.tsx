@@ -6,7 +6,9 @@ import type { CountStore } from "../../../zustand/countStore";
 
 const CountButton = () => {
    const { count, incrementCount }: CountStore = useCountStore();
-   const { setOptions, setIsDisabled, setIsSelected, setAnswerSelected, setErrMsg, selectedIndex }: DataStore = useDataStore();
+   const { setOptions, setIsDisabled, 
+           setIsSelected, setAnswerSelected, 
+           setErrMsg, selectedIndex }: DataStore = useDataStore();
    
   return (
     <>
