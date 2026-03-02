@@ -1,5 +1,5 @@
 import { useCountStore } from "../../../zustand/countStore";
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { useDataStore } from "../../../zustand/dataStore";
 import type { DataStore } from "../../../zustand/dataStore";
 import type { CountStore } from "../../../zustand/countStore";
@@ -9,13 +9,15 @@ const CountButton = () => {
    const { setOptions, setIsDisabled, 
            setIsSelected, setAnswerSelected, 
            setErrMsg, selectedIndex }: DataStore = useDataStore();
+   const location = useLocation();
+   console.log(location.pathname.split("/").slice(2, 3).toString().toLowerCase())
    
   return (
     <>
       {
         count === 10 ? (
           <Link 
-            to="/score"
+            to={`/score/${location.pathname.split("/").slice(2, 3).toString().toLowerCase()}`}
             className="mt-3 w-full py-4 bg-purple-600 hover:bg-purple-400 text-white font-regular rounded-xl lg:rounded-3xl shadow-xl transition text-center"
           >
             <span className="text-[clamp(16px,2vw,24px)]">Show Score</span>

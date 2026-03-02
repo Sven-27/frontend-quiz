@@ -31,7 +31,7 @@ const Quiz = () => {
           className="text-[clamp(20px,4vw,36px)] leading-[1.2] lg:max-w-[20ch] font-medium my-4 text-blue-900 font-light dark:text-gray-200"
         >
           {
-            questions.filter((topic: ResponseAPI) => `/quiz/${topic.title}` === location.pathname).map((topic: ResponseAPI) => 
+            questions.filter((topic: ResponseAPI) => `/quiz/${topic.title.toLowerCase()}` === location.pathname.toLowerCase()).map((topic: ResponseAPI) => 
               topic.questions[count - 1].question
             )
           }
