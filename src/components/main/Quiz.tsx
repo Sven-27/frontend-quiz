@@ -3,7 +3,7 @@ import ProgressBar from "../ProgressBar"
 import { useQuestionsStore } from "../../zustand/questionsStore";
 import type { ApiProps } from "../../zustand/questionsStore";
 import { useCountStore } from "../../zustand/countStore";
-import type { CountStore } from "../../zustand/countStore"
+import type { CountStore } from "../../zustand/countStore";
 import { useDataStore } from "../../zustand/dataStore";
 import type { DataStore } from "../../zustand/dataStore";
 import type { ResponseAPI } from "../../api/api";
