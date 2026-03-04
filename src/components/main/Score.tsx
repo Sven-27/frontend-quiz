@@ -20,23 +20,25 @@ const Score = () => {
 	}, []);
 
   return (
-    <main className="h-full w-full flex flex-col flex-lg-row z-10">
-      <section>
-        <h1>Quiz completed<br/><span>You scored...</span></h1>
+    <main className="h-full w-full flex flex-col xl:flex-row z-10">
+      <section className="mb-[clamp(40px,4vw,64px)]">
+        <h1 className="text-[clamp(40px,4vw,64px)] font-light leading-12 lg:leading-13 xl:leading-18">Quiz completed<br/><span className="font-medium">You scored...</span></h1>
       </section>
-      <section className="flex flex-col items-center">
+      <section>
+      <div className="flex flex-col items-center bg-white p-[clamp(32px,4vw,48px)] mb-[clamp(16px,4vw,24px)] rounded-xl md:rounded-2xl shadow-lg">
           {
             questions.filter((topic: ResponseAPI) => `/score/${topic.title.toLowerCase()}` === location.pathname.toLowerCase()).map((topic: ResponseAPI) => 
-              <div className="flex items-center gap-2">
-                <img src={topic.icon} className={`bg-white size-[clamp(28px,6vw,40px)] p-1 lg:p-[5px] rounded-lg ${topic['icon-bg']}`} alt={topic.title} />
-                <span>{topic.title}</span>
+              <div className="flex items-center gap-3">
+                <img src={topic.icon} className={`bg-white size-[clamp(40px,6vw,56px)] p-1 lg:p-[5px] rounded-lg ${topic['icon-bg']}`} alt={topic.title} />
+                <span className="text-[clamp(18px,4vw,28px)] font-medium">{topic.title}</span>
               </div>
           )
         }
-        <span>{score}</span>
+        <span className="text-[clamp(88px,4vw,144px)] font-bold">{score}</span>
         <p>out of { count }</p>
-      </section>
+      </div>
       <ResetButton />
+      </section>
     </main>
   )
 }
