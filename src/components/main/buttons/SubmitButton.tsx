@@ -1,7 +1,7 @@
 import { useScoreStore } from "../../../zustand/countStore";
+import type { ScoreStore } from "../../../zustand/countStore";
 import { useDataStore } from "../../../zustand/dataStore";
 import type { DataStore } from "../../../zustand/dataStore";
-import type { ScoreStore } from "../../../zustand/countStore";
 
 const SubmitButton = () => {
   const { incrementScore }: ScoreStore = useScoreStore();

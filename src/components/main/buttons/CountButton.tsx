@@ -1,5 +1,5 @@
-import { useCountStore } from "../../../zustand/countStore";
 import { Link, useLocation } from "react-router-dom"
+import { useCountStore } from "../../../zustand/countStore";
 import { useDataStore } from "../../../zustand/dataStore";
 import type { DataStore } from "../../../zustand/dataStore";
 import type { CountStore } from "../../../zustand/countStore";
@@ -10,7 +10,6 @@ const CountButton = () => {
            setIsSelected, setAnswerSelected, 
            setErrMsg, selectedIndex }: DataStore = useDataStore();
    const location = useLocation();
-   console.log(location.pathname.split("/").slice(2, 3).toString().toLowerCase())
    
   return (
     <>
