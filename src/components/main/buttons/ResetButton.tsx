@@ -7,9 +7,10 @@ import type { CountStore, ScoreStore } from "../../../zustand/countStore";
 const ResetButton = () => {
   const { resetCount }: CountStore = useCountStore();
   const { resetScore }: ScoreStore = useScoreStore();
-    //  const { setOptions, setIsDisabled, 
-    //          setIsSelected, setAnswerSelected, 
-    //          setErrMsg, selectedIndex }: DataStore = useDataStore();
+     const { setOptions, setIsDisabled, 
+             setIsSelected, setAnswerSelected, 
+             setErrMsg, selectedIndex,
+             setIsCorrect, setIsAnswer }: DataStore = useDataStore();
   return (
     <Link
       to="/"
@@ -17,6 +18,14 @@ const ResetButton = () => {
       onClick={() => {
         resetCount();
         resetScore();
+        setIsDisabled(false);
+        setIsSelected(false);
+        setAnswerSelected(false);
+        setOptions("");
+        setErrMsg(false);
+        selectedIndex(null);
+        setIsCorrect(false);
+        setIsAnswer("");
       }}
     >
       Play Again
