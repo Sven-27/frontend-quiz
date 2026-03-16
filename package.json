@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "start": "set HTTPS=true&&react-scripts start",
     "mockserver": "json-server --watch ../sample-db.json --port 3010 --delay 800",
-    "startdev": "concurrently --kill-others \"npm start\" \"npm run mockserver\""
+    "startdev": "concurrently --kill-others \"npm start\" \"npm run mockserver\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
@@ -36,6 +38,7 @@
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
+    "gh-pages": "^6.3.0",
     "globals": "^16.5.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
