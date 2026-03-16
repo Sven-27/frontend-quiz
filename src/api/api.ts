@@ -5,8 +5,8 @@ const api = axios.create({
   method: 'GET',
   headers: {
     'Content-Type': 'application/json',
-    // 'Access-Control-Allow-Origin': '*',
-    // withCredentials: false,
+    'Access-Control-Allow-Origin': '*',
+    withCredentials: false,
   },
 });
 
