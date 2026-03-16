@@ -14,7 +14,7 @@ const Themebuttons = () => {
   return (
     <>
       {
-        (questions)?.map((topic: ResponseAPI, index: number) => (
+        (questions).map((topic: ResponseAPI, index: number) => (
           <Link 
             key={index} 
             to={`/quiz/${topic.title}`} 
