@@ -1,16 +1,16 @@
 {
-  "name": "",
+  "name": "frontend-quiz",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "start": "set HTTPS=true&&react-scripts start",
-    "mockserver": "json-server --watch ../sample-db.json --port 3010 --delay 800",
-    "startdev": "concurrently --kill-others \"npm start\" \"npm run mockserver\"",
     "build": "tsc -b && vite build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
+    "mockserver": "json-server --watch ../sample-db.json --port 3010 --delay 800",
+    "startdev": "concurrently --kill-others \"npm start\" \"npm run mockserver\"",
     "lint": "eslint .",
     "preview": "vite preview"
   },
