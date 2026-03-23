@@ -7,8 +7,7 @@ export type ApiProps = {
   questions: ResponseAPI[];
   loading?: boolean;
   error?: string | null;
-  fetchQuestions: Function;
-  clearQuestions?: Function;
+  fetchQuestions: () => Promise<void>;
 }
 
 // Define the Zustand store

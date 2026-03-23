@@ -18,9 +18,9 @@ function App() {
      <div className={`container w-screen h-screen 2xl:max-h-[960px] overflow-hidden bg-grey-50 dark:bg-blue-900 flex flex-col items-center justify-center relative px-[24px] lg:px-[8rem] py-[16px] ${dark ? 'dark' : ''}`}>
         <Header />
           <Routes>
-            <Route path="/frontend-quiz" element={<Home />} />
-            <Route path="/frontend-quiz/quiz/:title" element={<Quiz />} />
-            <Route path="/frontend-quiz/score/:title" element={<Score />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/quiz/:title" element={<Quiz />} />
+            <Route path="/score/:title" element={<Score />} />
           </Routes>
      </div>
         </BrowserRouter>
