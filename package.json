@@ -7,12 +7,12 @@
     "dev": "vite",
     "start": "set HTTPS=true&&react-scripts start",
     "build": "tsc -b && vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "mockserver": "json-server --watch ../sample-db.json --port 3010 --delay 800",
     "startdev": "concurrently --kill-others \"npm start\" \"npm run mockserver\"",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
