@@ -23,6 +23,7 @@ export const useQuestionsStore = create<ApiProps>()(
           set({ loading: true, error: null });
           try {
             const response = await api.get('/quizzes');
+            console.log('Fetched questions:', response.data);
             set({ questions: response.data, loading: false });
           } catch (error) {
             set({ error: error instanceof Error ? error.message : String(error), loading: false });
