@@ -16,9 +16,9 @@ const Score = () => {
   const location = useLocation();
   const { count }: CountStore = useCountStore();
 
-	useEffect(() => {
-		fetchQuestions();
-	}, []);
+  useEffect(() => {
+    fetchQuestions();
+  }, [fetchQuestions]);
 
   console.log(count, score);
 
@@ -31,7 +31,7 @@ const Score = () => {
       <section className="xl:w-1/2">
       <div className="flex flex-col items-center bg-white dark:bg-blue-850 p-[clamp(32px,4vw,48px)] mb-[clamp(16px,4vw,24px)] rounded-xl md:rounded-3xl shadow-lg">
           {
-            questions.filter((topic: ResponseAPI) => `/score/${topic.title.toLowerCase()}` === location.pathname.toLowerCase()).map((topic: ResponseAPI) => 
+            questions.filter((topic: ResponseAPI) => `/frontend-quiz/score/${topic.title.toLowerCase()}` === location.pathname.toLowerCase()).map((topic: ResponseAPI) => 
               <div className="flex items-center gap-3">
                 <img src={topic.icon} className={`bg-white size-[clamp(40px,6vw,56px)] p-1 lg:p-[5px] rounded-lg ${topic['icon-bg']}`} alt={topic.title} />
                 <span className="text-[clamp(18px,2.5vw,28px)] font-medium text-blue-900 dark:text-white">{topic.title}</span>

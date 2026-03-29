@@ -19,7 +19,7 @@ const SelectButtons = () => {
   return (
     <>
       {
-        questions.filter((topic: ResponseAPI) => `/quiz/${topic.title}` === location.pathname).map((topic: ResponseAPI) => 
+        questions.filter((topic: ResponseAPI) => `/frontend-quiz/quiz/${topic.title}` === location.pathname).map((topic: ResponseAPI) => 
           Object.entries(topic.questions[count - 1].options).map(([key, option], index) => (
             <button 
               key={index} 

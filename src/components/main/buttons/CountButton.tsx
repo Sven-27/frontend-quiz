@@ -16,7 +16,7 @@ const CountButton = () => {
       {
         count === 10 ? (
           <Link 
-            to={`/score/${location.pathname.split("/").slice(2, 3).toString().toLowerCase()}`}
+            to={`/frontend-quiz/score/${location.pathname.split("/").slice(2, 3).toString().toLowerCase()}`}
             className="mt-3 w-full py-4 bg-purple-600 hover:bg-purple-400 text-white font-regular rounded-xl lg:rounded-3xl shadow-xl transition text-center"
           >
             <span className="text-[clamp(16px,2vw,24px)]">Show Score</span>

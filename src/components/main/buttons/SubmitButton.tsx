@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { useScoreStore } from "../../../zustand/countStore";
 import type { ScoreStore } from "../../../zustand/countStore";
 import { useDataStore } from "../../../zustand/dataStore";
 import type { DataStore } from "../../../zustand/dataStore";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 const SubmitButton = () => {
   const { incrementScore }: ScoreStore = useScoreStore();
   const { options, isAnswer, setIsCorrect, setIsDisabled, setIsSelected, setErrMsg }: DataStore = useDataStore();

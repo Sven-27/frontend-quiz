@@ -13,7 +13,7 @@ const ResetButton = () => {
              setIsCorrect, setIsAnswer }: DataStore = useDataStore();
   return (
     <Link
-      to="/"
+      to="/frontend-quiz"
       className="w-full flex justify-center items-center bg-purple-600 text-white rounded-xl md:rounded-3xl py-[clamp(16px,2.5vw,32px)] text-[clamp(18px,2.5vw,28px)]"
       onClick={() => {
         resetCount();
