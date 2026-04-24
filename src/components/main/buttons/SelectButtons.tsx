@@ -47,14 +47,14 @@ const SelectButtons = () => {
               </p>
               <span className="w-full">{String(option)}</span>
               <img 
-                src="../../src/assets/images/icon-correct.svg" 
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8cGF0aCBmaWxsPSIjMjZENzgyIiBkPSJNMjAgNWExNSAxNSAwIDEgMSAwIDMwIDE1IDE1IDAgMCAxIDAtMzBabTAgMi41YTEyLjUgMTIuNSAwIDEgMCAwIDI1IDEyLjUgMTIuNSAwIDAgMCAwLTI1Wm0tMS44NzUgMTUuMTA1TDI1LjMgMTUuNDFhMS4yNSAxLjI1IDAgMCAxIDEuOTE1IDEuNTkzbC0uMTQ1LjE3NC04LjA2IDguMDhhMS4yNSAxLjI1IDAgMCAxLTEuNTk1LjE0OGwtLjE3NS0uMTQ1LTQuMzc1LTQuMzc1YTEuMjUgMS4yNSAwIDAgMSAxLjU5NS0xLjkxM2wuMTc1LjE0MyAzLjQ5IDMuNDlaIj48L3BhdGg+Cjwvc3ZnPgo=" 
                 alt="Check Icon" 
                 className={`size-[clamp(32px,6vw,40px)] 
                             ${isSelected && String(option) === isAnswer ? "block" : "hidden"}               
                           `} 
               />
                 <img 
-                src="../../src/assets/images/icon-incorrect.svg" 
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8cGF0aCBmaWxsPSIjRUU1NDU0IiBkPSJNMjAgNWExNSAxNSAwIDEgMSAwIDMwIDE1IDE1IDAgMCAxIDAtMzBabTAgMi41YTEyLjUgMTIuNSAwIDEgMCAwIDI1IDEyLjUgMTIuNSAwIDAgMCAwLTI1Wm0tNS40MDIgNy40MTUuMTQyLS4xNzVhMS4yNSAxLjI1IDAgMCAxIDEuNTk1LS4xNDNsLjE3NS4xNDNMMjAgMTguMjMzbDMuNDktMy40OTNhMS4yNSAxLjI1IDAgMCAxIDEuNTk1LS4xNDNsLjE3NS4xNDNhMS4yNSAxLjI1IDAgMCAxIC4xNDIgMS41OTVsLS4xNDIuMTc1TDIxLjc2NyAyMGwzLjQ5MyAzLjQ5YTEuMjUgMS4yNSAwIDAgMSAuMTQyIDEuNTk1bC0uMTQyLjE3NWExLjI1IDEuMjUgMCAwIDEtMS41OTUuMTQybC0uMTc1LS4xNDJMMjAgMjEuNzY3bC0zLjQ5IDMuNDkzYTEuMjUgMS4yNSAwIDAgMS0xLjU5NS4xNDJsLS4xNzUtLjE0MmExLjI1IDEuMjUgMCAwIDEtLjE0My0xLjU5NWwuMTQzLS4xNzVMMTguMjMzIDIwbC0zLjQ5My0zLjQ5YTEuMjUgMS4yNSAwIDAgMS0uMTQzLTEuNTk1WiI+PC9wYXRoPgo8L3N2Zz4K" 
                 alt="Check Icon" 
                 className={`size-[clamp(32px,6vw,40px)] ${options !== isAnswer && selected === index && isSelected ? "block" : "hidden"}`} 
               />

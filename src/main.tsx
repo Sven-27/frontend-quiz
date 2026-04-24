@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
@@ -8,3 +9,5 @@ createRoot(document.getElementById('root')!).render(
       <App />
   </StrictMode>,
 )
+
+// data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8cGF0aCBmaWxsPSIjRkY3RTM1IiBkPSJNMjQuNTA4IDcuNjA3YTEuMjUgMS4yNSAwIDAgMSAuNjM0IDEuNjVsLTEwIDIyLjVhMS4yNSAxLjI1IDAgMSAxLTIuMjg0LTEuMDE1bDEwLTIyLjVhMS4yNTEgMS4yNTEgMCAwIDEgMS42NS0uNjM1Wk0xMC44MzIgMTMuNDRhMS4yNDkgMS4yNDkgMCAwIDEgLjEgMS43NjVMNi42NzQgMjBsNC4yNjMgNC43OTVhMS4yNSAxLjI1IDAgMSAxLTEuODcgMS42NmwtNS01LjYyNWExLjI1IDEuMjUgMCAwIDEgMC0xLjY2bDUtNS42MjVhMS4yNSAxLjI1IDAgMCAxIDEuNzY0LS4xMDVabTE4LjMzNyAwYTEuMjUgMS4yNSAwIDAgMSAxLjc2NS4xMDVsNSA1LjYyNWExLjI1IDEuMjUgMCAwIDEgMCAxLjY2bC01IDUuNjI1YTEuMjUgMS4yNSAwIDEgMS0xLjg3LTEuNjZMMzMuMzI3IDIwbC00LjI2Mi00Ljc5NWExLjI1IDEuMjUgMCAwIDEgLjEwNS0xLjc2NVoiPjwvcGF0aD4KPC9zdmc+Cg==
